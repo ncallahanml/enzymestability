@@ -11,12 +11,12 @@ train_df = pd.read_csv('train.csv', index_col=0)
 test_df = pd.read_csv('test.csv', index_col=0)
 model = joblib.load('model.joblib')
 
-# permutations = list()
-# for col in train_df:
-#     if not '_' in col and col.isupper() and 0 < len(col) < 7:
-#         permutations.append(col)
-# BASE = 'VPVNPEPDATSVENVALKTGSGDSQSDPIKADLEVKGQSALPFDVDCWAILCKGAPNVLQRVNEKTKNSNRDRSGANKGPFKDPQKWGIKALPPKNPSWSAQDFKSPEEYAFASSLQGGTNAILAPVNLASQNSQGGVLNGFYSANKVAQFDPSKPQQTKGTWFQITKFTGAAGPYCKALGSNDKSVCDKNKNIAGDWGFDPAKWAYQYDEKNNKFNYVGK'
-# terminology_map = {"replace":"substitution", "insert":"insertion", "delete":"deletion"}
+permutations = list()
+for col in train_df:
+    if not '_' in col and col.isupper() and 0 < len(col) < 4:
+        permutations.append(col)
+BASE = 'VPVNPEPDATSVENVALKTGSGDSQSDPIKADLEVKGQSALPFDVDCWAILCKGAPNVLQRVNEKTKNSNRDRSGANKGPFKDPQKWGIKALPPKNPSWSAQDFKSPEEYAFASSLQGGTNAILAPVNLASQNSQGGVLNGFYSANKVAQFDPSKPQQTKGTWFQITKFTGAAGPYCKALGSNDKSVCDKNKNIAGDWGFDPAKWAYQYDEKNNKFNYVGK'
+terminology_map = {"replace":"substitution", "insert":"insertion", "delete":"deletion"}
 
 
 st.set_page_config(layout="centered", page_icon="🧬", page_title="Enzyme Thermal Stability")
